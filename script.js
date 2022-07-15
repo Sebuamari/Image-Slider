@@ -15,6 +15,17 @@ const urls = [
 let currentPic=0;
 const next = document.querySelector(".arrow-right");
 const previous = document.querySelector(".arrow-left");
+let previousDot = document.getElementById("0");
+const zeroSpan = document.getElementById("0");
+const firstSpan = document.getElementById("1");
+const secondSpan = document.getElementById("2");
+const thirdSpan = document.getElementById("3");
+const fourthSpan = document.getElementById("4");
+const fifthpan = document.getElementById("5");
+const sixthSpan = document.getElementById("6");
+const seventhSpan = document.getElementById("7");
+const eighthSpan = document.getElementById("8");
+const ninethSpan = document.getElementById("9");
 
 frame.innerHTML = `<img class="picture" src="`+urls[currentPic]+`"/>`;
 
@@ -43,3 +54,22 @@ previous.addEventListener("click", function showPrevious () {
     nextDot.classList.add("dot-chosen");
     frame.innerHTML = `<img class="picture fade" src="`+urls[currentPic]+`"/>`;
 });
+
+function showTarget (e) {
+    previousDot.classList.remove("dot-chosen");
+    frame.innerHTML = `<img class="picture fade" src="`+urls[e.target.id]+`"/>`;
+    let nextDot = document.getElementById(e.target.id); 
+    nextDot.classList.add("dot-chosen");
+    previousDot = document.getElementById(e.target.id);
+};
+
+zeroSpan.addEventListener("click", showTarget);
+firstSpan.addEventListener("click", showTarget);
+secondSpan.addEventListener("click", showTarget);
+thirdSpan.addEventListener("click", showTarget);
+fourthSpan.addEventListener("click", showTarget);
+fifthpan.addEventListener("click", showTarget);
+sixthSpan.addEventListener("click", showTarget);
+seventhSpan.addEventListener("click", showTarget);
+eighthSpan.addEventListener("click", showTarget);
+ninethSpan.addEventListener("click", showTarget);
